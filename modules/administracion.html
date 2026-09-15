@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administración — SmartBI Analytics Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="admin">
+
+  <header class="topbar">
+    <div class="topbar-brand"><span class="mark">BI</span>SmartBI Analytics Suite</div>
+    <div class="topbar-user">
+      <span>Hola, <strong id="current-user">—</strong></span>
+      <button id="logout-btn" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <nav class="sidebar" aria-label="Módulos del sistema">
+      <div class="sidebar-section-label">General</div>
+      <a href="../dashboard.html" data-page="inicio">Inicio</a>
+
+      <div class="sidebar-section-label">Módulos</div>
+      <a href="etl.html" data-page="etl"><span class="dot" style="background:var(--mod-etl)"></span>Carga de datos</a>
+      <a href="kpis.html" data-page="kpis"><span class="dot" style="background:var(--mod-kpis)"></span>Dashboard y KPIs</a>
+      <a href="filtros.html" data-page="filtros"><span class="dot" style="background:var(--mod-filtros)"></span>Filtros y Drill-Down</a>
+      <a href="anomalias.html" data-page="anomalias"><span class="dot" style="background:var(--mod-anomalias)"></span>Anomalías</a>
+      <a href="reportes.html" data-page="reportes"><span class="dot" style="background:var(--mod-reportes)"></span>Reportes</a>
+      <a href="administracion.html" data-page="admin"><span class="dot" style="background:var(--mod-admin)"></span>Administración</a>
+    </nav>
+
+    <main class="main-content">
+      <div class="breadcrumb"><a href="../dashboard.html">Inicio</a> / <span class="current">Administración</span></div>
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div>
+          <h1>Administración</h1>
+          <p>Gestión de usuarios, roles y registros del sistema. Solo visible para el rol administrador.</p>
+        </div>
+        <button type="button" class="btn btn-gold">+ Nuevo usuario</button>
+      </div>
+
+      <div class="card" style="overflow:hidden;">
+        <table class="table">
+          <thead>
+            <tr><th>Nombre</th><th>Correo</th><th>Rol</th><th>Estado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Carlos Mendoza</td><td>carlos.mendoza@elexito.com</td><td>Gerente</td><td><span class="badge badge-success">Activo</span></td></tr>
+            <tr><td>Ana Torres</td><td>ana.torres@elexito.com</td><td>Analista</td><td><span class="badge badge-success">Activo</span></td></tr>
+            <tr><td>Julián Ríos</td><td>julian.rios@elexito.com</td><td>Analista</td><td><span class="badge badge-neutral">Inactivo</span></td></tr>
+            <tr><td>Brayan Espitia</td><td>brayan.espitia@elexito.com</td><td>Administrador</td><td><span class="badge badge-success">Activo</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="margin-top:36px;">Roles del sistema</h2>
+      <div style="display:flex; gap:10px;">
+        <span class="badge badge-neutral">Administrador — configura reportes y ve logs</span>
+        <span class="badge badge-neutral">Gerente — ve todos los módulos</span>
+        <span class="badge badge-neutral">Analista — consulta dashboard y filtros</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

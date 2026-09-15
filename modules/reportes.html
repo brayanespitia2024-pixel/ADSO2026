@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reportes Automáticos — SmartBI Analytics Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="reportes">
+
+  <header class="topbar">
+    <div class="topbar-brand"><span class="mark">BI</span>SmartBI Analytics Suite</div>
+    <div class="topbar-user">
+      <span>Hola, <strong id="current-user">—</strong></span>
+      <button id="logout-btn" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <nav class="sidebar" aria-label="Módulos del sistema">
+      <div class="sidebar-section-label">General</div>
+      <a href="../dashboard.html" data-page="inicio">Inicio</a>
+
+      <div class="sidebar-section-label">Módulos</div>
+      <a href="etl.html" data-page="etl"><span class="dot" style="background:var(--mod-etl)"></span>Carga de datos</a>
+      <a href="kpis.html" data-page="kpis"><span class="dot" style="background:var(--mod-kpis)"></span>Dashboard y KPIs</a>
+      <a href="filtros.html" data-page="filtros"><span class="dot" style="background:var(--mod-filtros)"></span>Filtros y Drill-Down</a>
+      <a href="anomalias.html" data-page="anomalias"><span class="dot" style="background:var(--mod-anomalias)"></span>Anomalías</a>
+      <a href="reportes.html" data-page="reportes"><span class="dot" style="background:var(--mod-reportes)"></span>Reportes</a>
+      <a href="administracion.html" data-page="admin"><span class="dot" style="background:var(--mod-admin)"></span>Administración</a>
+    </nav>
+
+    <main class="main-content">
+      <div class="breadcrumb"><a href="../dashboard.html">Inicio</a> / <span class="current">Reportes Automáticos</span></div>
+      <h1>Reportes Automáticos</h1>
+      <p>Configura el envío periódico de reportes por correo, o genera uno bajo demanda.</p>
+
+      <div class="card" style="padding:20px; max-width:520px;">
+        <h3>Nuevo reporte programado</h3>
+        <div class="field">
+          <label for="r-nombre">Nombre</label>
+          <input type="text" id="r-nombre" placeholder="Reporte semanal de ventas" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="r-frecuencia">Frecuencia</label>
+            <select id="r-frecuencia"><option>Diaria</option><option selected>Semanal</option><option>Mensual</option></select>
+          </div>
+          <div class="field">
+            <label for="r-formato">Formato</label>
+            <select id="r-formato"><option>PDF</option><option>Excel</option><option>PDF y Excel</option></select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="r-correo">Destinatarios</label>
+          <input type="text" id="r-correo" placeholder="carlos.mendoza@elexito.com" />
+        </div>
+        <button type="button" class="btn btn-gold">Guardar configuración</button>
+      </div>
+
+      <h2 style="margin-top:36px;">Historial de envíos</h2>
+      <div class="card" style="overflow:hidden;">
+        <table class="table">
+          <thead>
+            <tr><th>Fecha</th><th>Reporte</th><th>Destinatario</th><th>Estado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>08 sep 2026</td><td>Reporte semanal de ventas</td><td>carlos.mendoza@elexito.com</td><td><span class="badge badge-success">Enviado</span></td></tr>
+            <tr><td>01 sep 2026</td><td>Reporte semanal de ventas</td><td>carlos.mendoza@elexito.com</td><td><span class="badge badge-success">Enviado</span></td></tr>
+            <tr><td>25 ago 2026</td><td>Cierre mensual agosto</td><td>gerencia@elexito.com</td><td><span class="badge badge-danger">Fallido</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

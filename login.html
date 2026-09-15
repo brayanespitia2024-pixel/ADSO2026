@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión — SmartBI Analytics Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+
+  <div class="auth-shell">
+    <div class="auth-brand">
+      <a href="index.html" class="brand"><span class="mark">BI</span>SmartBI Analytics Suite</a>
+
+      <div class="auth-quote">
+        <p>“Nos demoramos como dos semanas en tener el reporte mensual, y muchas veces hay errores.”</p>
+        <cite>— Carlos Mendoza, Gerente General</cite>
+      </div>
+
+      <div class="auth-legend">
+        <span class="chip"><span class="dot" style="background:var(--mod-etl)"></span>ETL</span>
+        <span class="chip"><span class="dot" style="background:var(--mod-kpis)"></span>Dashboard</span>
+        <span class="chip"><span class="dot" style="background:var(--mod-filtros)"></span>Filtros</span>
+        <span class="chip"><span class="dot" style="background:var(--mod-anomalias)"></span>Anomalías</span>
+        <span class="chip"><span class="dot" style="background:var(--mod-reportes)"></span>Reportes</span>
+        <span class="chip"><span class="dot" style="background:var(--mod-admin)"></span>Administración</span>
+      </div>
+    </div>
+
+    <div class="auth-panel">
+      <form class="auth-form" id="login-form" novalidate>
+        <h1>Inicia sesión</h1>
+        <p>Ingresa con tu usuario para ver el tablero de la empresa.</p>
+
+        <div class="form-message" id="login-message" role="alert"></div>
+
+        <div class="field">
+          <label for="usuario">Usuario o correo</label>
+          <input type="text" id="usuario" name="usuario" autocomplete="username" placeholder="carlos.mendoza" />
+        </div>
+
+        <div class="field">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" placeholder="••••••••" />
+        </div>
+
+        <div class="form-footer">
+          <span></span>
+          <a href="recuperar-password.html">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-block">Iniciar sesión</button>
+
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

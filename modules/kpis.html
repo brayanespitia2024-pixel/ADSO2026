@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard y KPIs — SmartBI Analytics Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    .chart-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-top: 24px; }
+    .chart-placeholder { padding: 20px; min-height: 220px; display: flex; flex-direction: column; }
+    .chart-placeholder .chart-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; }
+    .fake-bars { display: flex; align-items: flex-end; gap: 10px; height: 140px; flex: 1; }
+    .fake-bars span { flex: 1; background: var(--mod-kpis); border-radius: 3px 3px 0 0; opacity: 0.85; }
+    .fake-pie { width: 130px; height: 130px; border-radius: 50%; margin: 0 auto; background: conic-gradient(var(--mod-etl) 0 35%, var(--mod-kpis) 35% 60%, var(--mod-filtros) 60% 80%, var(--mod-reportes) 80% 100%); }
+  </style>
+</head>
+<body data-page="kpis">
+
+  <header class="topbar">
+    <div class="topbar-brand"><span class="mark">BI</span>SmartBI Analytics Suite</div>
+    <div class="topbar-user">
+      <span>Hola, <strong id="current-user">—</strong></span>
+      <button id="logout-btn" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <nav class="sidebar" aria-label="Módulos del sistema">
+      <div class="sidebar-section-label">General</div>
+      <a href="../dashboard.html" data-page="inicio">Inicio</a>
+
+      <div class="sidebar-section-label">Módulos</div>
+      <a href="etl.html" data-page="etl"><span class="dot" style="background:var(--mod-etl)"></span>Carga de datos</a>
+      <a href="kpis.html" data-page="kpis"><span class="dot" style="background:var(--mod-kpis)"></span>Dashboard y KPIs</a>
+      <a href="filtros.html" data-page="filtros"><span class="dot" style="background:var(--mod-filtros)"></span>Filtros y Drill-Down</a>
+      <a href="anomalias.html" data-page="anomalias"><span class="dot" style="background:var(--mod-anomalias)"></span>Anomalías</a>
+      <a href="reportes.html" data-page="reportes"><span class="dot" style="background:var(--mod-reportes)"></span>Reportes</a>
+      <a href="administracion.html" data-page="admin"><span class="dot" style="background:var(--mod-admin)"></span>Administración</a>
+    </nav>
+
+    <main class="main-content">
+      <div class="breadcrumb"><a href="../dashboard.html">Inicio</a> / <span class="current">Dashboard y KPIs</span></div>
+      <h1>Dashboard y KPIs</h1>
+      <p>Vista detallada de indicadores. Los datos y gráficos son de ejemplo; se conectarán a la base de datos en la siguiente etapa.</p>
+
+      <div class="kpi-grid">
+        <div class="card kpi-card">
+          <div class="kpi-label">Ventas totales</div>
+          <div class="kpi-value">$48.2M</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-label">Ticket promedio</div>
+          <div class="kpi-value">$186.500</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-label">Transacciones</div>
+          <div class="kpi-value">1.284</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-label">Margen promedio</div>
+          <div class="kpi-value">23,4%</div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="card chart-placeholder">
+          <div class="chart-title">Ventas por semana</div>
+          <div class="fake-bars">
+            <span style="height:40%"></span><span style="height:65%"></span><span style="height:50%"></span>
+            <span style="height:80%"></span><span style="height:70%"></span><span style="height:95%"></span>
+          </div>
+        </div>
+        <div class="card chart-placeholder">
+          <div class="chart-title">Ventas por región</div>
+          <div class="fake-pie"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detección de Anomalías — SmartBI Analytics Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body data-page="anomalias">
+
+  <header class="topbar">
+    <div class="topbar-brand"><span class="mark">BI</span>SmartBI Analytics Suite</div>
+    <div class="topbar-user">
+      <span>Hola, <strong id="current-user">—</strong></span>
+      <button id="logout-btn" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <nav class="sidebar" aria-label="Módulos del sistema">
+      <div class="sidebar-section-label">General</div>
+      <a href="../dashboard.html" data-page="inicio">Inicio</a>
+
+      <div class="sidebar-section-label">Módulos</div>
+      <a href="etl.html" data-page="etl"><span class="dot" style="background:var(--mod-etl)"></span>Carga de datos</a>
+      <a href="kpis.html" data-page="kpis"><span class="dot" style="background:var(--mod-kpis)"></span>Dashboard y KPIs</a>
+      <a href="filtros.html" data-page="filtros"><span class="dot" style="background:var(--mod-filtros)"></span>Filtros y Drill-Down</a>
+      <a href="anomalias.html" data-page="anomalias"><span class="dot" style="background:var(--mod-anomalias)"></span>Anomalías</a>
+      <a href="reportes.html" data-page="reportes"><span class="dot" style="background:var(--mod-reportes)"></span>Reportes</a>
+      <a href="administracion.html" data-page="admin"><span class="dot" style="background:var(--mod-admin)"></span>Administración</a>
+    </nav>
+
+    <main class="main-content">
+      <div class="breadcrumb"><a href="../dashboard.html">Inicio</a> / <span class="current">Detección de Anomalías</span></div>
+      <h1>Detección de Anomalías</h1>
+      <p>Alertas generadas automáticamente cuando las ventas caen o el margen baja del umbral configurado.</p>
+
+      <h2>Alertas activas</h2>
+      <div class="alert-item">
+        <div class="alert-icon">!</div>
+        <div>
+          <strong>Caída de ventas — Región Cali</strong>
+          <p style="margin-bottom:4px;">Las ventas bajaron 27% frente al período anterior (umbral: 20%).</p>
+          <span class="badge badge-danger">Crítica</span>
+        </div>
+      </div>
+      <div class="alert-item warning">
+        <div class="alert-icon">!</div>
+        <div>
+          <strong>Margen bajo — Categoría Aseo</strong>
+          <p style="margin-bottom:4px;">El margen promedio cayó a 8.2%, por debajo del umbral de 10%.</p>
+          <span class="badge badge-warning">Advertencia</span>
+        </div>
+      </div>
+      <div class="alert-item warning">
+        <div class="alert-icon">!</div>
+        <div>
+          <strong>Producto sin movimiento — Panela x 24</strong>
+          <p style="margin-bottom:4px;">Sin ventas registradas en los últimos 30 días.</p>
+          <span class="badge badge-warning">Advertencia</span>
+        </div>
+      </div>
+
+      <h2 style="margin-top:36px;">Umbrales de alerta</h2>
+      <div class="card" style="padding:20px; max-width:420px;">
+        <div class="field">
+          <label for="u-ventas">Caída de ventas (%)</label>
+          <input type="number" id="u-ventas" value="20" />
+        </div>
+        <div class="field">
+          <label for="u-margen">Margen mínimo (%)</label>
+          <input type="number" id="u-margen" value="10" />
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="u-dias">Días sin movimiento</label>
+          <input type="number" id="u-dias" value="30" />
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+:root {
+  /* Base palette */
+  --paper: #f4f5f1;
+  --paper-dim: #ebece6;
+  --ink-900: #16232c;
+  --ink-700: #29414d;
+  --ink-500: #4f6672;
+  --ink-300: #8ba0a9;
+  --line: #d8dad2;
+  --white: #ffffff;
+
+  /* Accent */
+  --gold: #c98a2c;
+  --gold-dark: #a86f1f;
+  --gold-tint: #f2e3c6;
+
+  /* Semantic */
+  --success: #3f7a5c;
+  --danger: #b23a48;
+  --danger-tint: #f5dfe1;
+  --warning: #c9862c;
+  --warning-tint: #f3e4c9;
+
+  /* Module colors (match existing project documentation) */
+  --mod-etl: #2f6fa8;      /* azul */
+  --mod-kpis: #3f7a5c;     /* verde */
+  --mod-filtros: #6c4f92;  /* morado */
+  --mod-anomalias: #b23a48;/* rojo */
+  --mod-reportes: #8a5a34; /* café */
+  --mod-admin: #5b6670;    /* gris */
+
+  /* Type */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+
+  /* Layout */
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --sidebar-w: 240px;
+  --topbar-h: 64px;
+  --shadow-card: 0 1px 2px rgba(22, 35, 44, 0.06), 0 1px 0 rgba(22, 35, 44, 0.04);
+}

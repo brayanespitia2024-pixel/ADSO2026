@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio — SmartBI Analytics Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body data-page="inicio">
+
+  <header class="topbar">
+    <div class="topbar-brand"><span class="mark">BI</span>SmartBI Analytics Suite</div>
+    <div class="topbar-user">
+      <span>Hola, <strong id="current-user">—</strong></span>
+      <button id="logout-btn" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <nav class="sidebar" aria-label="Módulos del sistema">
+      <div class="sidebar-section-label">General</div>
+      <a href="dashboard.html" data-page="inicio">Inicio</a>
+
+      <div class="sidebar-section-label">Módulos</div>
+      <a href="modules/etl.html" data-page="etl"><span class="dot" style="background:var(--mod-etl)"></span>Carga de datos</a>
+      <a href="modules/kpis.html" data-page="kpis"><span class="dot" style="background:var(--mod-kpis)"></span>Dashboard y KPIs</a>
+      <a href="modules/filtros.html" data-page="filtros"><span class="dot" style="background:var(--mod-filtros)"></span>Filtros y Drill-Down</a>
+      <a href="modules/anomalias.html" data-page="anomalias"><span class="dot" style="background:var(--mod-anomalias)"></span>Anomalías</a>
+      <a href="modules/reportes.html" data-page="reportes"><span class="dot" style="background:var(--mod-reportes)"></span>Reportes</a>
+      <a href="modules/administracion.html" data-page="admin"><span class="dot" style="background:var(--mod-admin)"></span>Administración</a>
+    </nav>
+
+    <main class="main-content">
+      <h1>Resumen general</h1>
+      <p>Datos de ejemplo para la demostración — el período mostrado es el mes actual.</p>
+
+      <div class="kpi-grid">
+        <div class="card kpi-card">
+          <div class="kpi-label">Ventas totales</div>
+          <div class="kpi-value">$48.2M</div>
+          <div class="kpi-delta up">▲ 12% vs. mes anterior</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-label">Ticket promedio</div>
+          <div class="kpi-value">$186.500</div>
+          <div class="kpi-delta up">▲ 4% vs. mes anterior</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-label">Transacciones</div>
+          <div class="kpi-value">1.284</div>
+          <div class="kpi-delta down">▼ 2% vs. mes anterior</div>
+        </div>
+        <div class="card kpi-card">
+          <div class="kpi-label">Margen promedio</div>
+          <div class="kpi-value">23,4%</div>
+          <div class="kpi-delta up">▲ 1.1 pts vs. mes anterior</div>
+        </div>
+      </div>
+
+      <h2>Módulos del sistema</h2>
+      <div class="module-grid">
+        <a class="card module-card" style="border-left-color:var(--mod-etl)" href="modules/etl.html">
+          <h3>Carga de datos (ETL)</h3>
+          <p>Sube archivos CSV de ventas, productos, clientes o vendedores.</p>
+          <span class="go-link">Entrar →</span>
+        </a>
+        <a class="card module-card" style="border-left-color:var(--mod-kpis)" href="modules/kpis.html">
+          <h3>Dashboard y KPIs</h3>
+          <p>Ventas, ticket promedio, top productos y tendencias en gráficos.</p>
+          <span class="go-link">Entrar →</span>
+        </a>
+        <a class="card module-card" style="border-left-color:var(--mod-filtros)" href="modules/filtros.html">
+          <h3>Filtros y Drill-Down</h3>
+          <p>Filtra por fecha, región, vendedor y profundiza hasta la transacción.</p>
+          <span class="go-link">Entrar →</span>
+        </a>
+        <a class="card module-card" style="border-left-color:var(--mod-anomalias)" href="modules/anomalias.html">
+          <h3>Detección de Anomalías</h3>
+          <p>Alertas automáticas por caídas de ventas o margen bajo.</p>
+          <span class="go-link">Entrar →</span>
+        </a>
+        <a class="card module-card" style="border-left-color:var(--mod-reportes)" href="modules/reportes.html">
+          <h3>Reportes Automáticos</h3>
+          <p>Programa el envío de reportes en PDF o Excel por correo.</p>
+          <span class="go-link">Entrar →</span>
+        </a>
+        <a class="card module-card" style="border-left-color:var(--mod-admin)" href="modules/administracion.html">
+          <h3>Administración</h3>
+          <p>Gestión de usuarios, roles y registros del sistema.</p>
+          <span class="go-link">Entrar →</span>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
